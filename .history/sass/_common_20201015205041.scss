@@ -1,0 +1,302 @@
+@import '_var.scss';
+
+/* common css */
+.width{
+  width: 1800px;
+  margin: 0 auto;
+  @media screen and (max-width: 1800px){
+    width: $widt;
+  }
+  // @media screen and (max-width: 1025px){
+  //   width: 94%;
+  // }
+}
+.wid{
+  width: 1240px;
+  margin: 0 auto;
+}
+.hei{
+  height: $width;
+}
+.flex {
+	display: $flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-sb {
+	display: $flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.ttu {
+	text-transform: uppercase;
+}
+.fhd{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  /*!autoprefixer:off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer:on*/
+}
+.fhd2{
+  @extend .fhd;
+  -webkit-line-clamp: 2;
+}
+.fhd3{
+  @extend .fhd;
+  -webkit-line-clamp: 3;
+}
+.fhd4{
+  @extend .fhd;
+  -webkit-line-clamp: 4;
+}
+.fhd5{
+  @extend .fhd;
+  -webkit-line-clamp: 5;
+}
+.fhd6{
+  @extend .fhd;
+  -webkit-line-clamp: 6;
+}
+
+.como{
+  position: absolute;
+  background: #ffcebf;
+  width: 180px;
+  display: none;
+}
+// .menu:after{
+//   content:'﹀';
+//   position: absolute;
+//   right: -18px;
+//   top: 3px;
+// }
+
+
+@mixin anim{
+  transition: all .3s;
+}
+@mixin topa{
+  &::before{
+    content: '';
+  }
+  &::after{
+    content: '\e622';
+    font-size: $fs8;
+    margin-top: 2px;
+    margin-left: 4px;
+  }
+}
+@mixin btn($bw, $bh, $bfs){
+  width: $bw;
+  height: $bh;
+  border-radius: 5px;
+  background: $color;
+  color: $white;
+  font-size: $bfs;
+  margin-top: 3%;
+  margin-left: 2%;
+
+}
+.btn{
+  @include anim;
+  @include btn(200px,50px,$fs4);
+  &:hover{
+    background: $color2;
+    color: $white;
+  }
+  @media screen and (max-width: 1025px){
+    @include btn(180px,40px,$fs5);
+    margin-top: 2%;
+  }
+  @media screen and (max-width: 550px){
+    // @include btn(
+    //   $bw: 180px,
+    //   $bh: 40px,
+    //   $bfs: $fs5,
+    // );
+    @include btn(180px,40px,$fs5);
+    margin-left: 4%;
+  }
+  
+}
+.btn_a{
+  font-weight: 600;
+  color: $color2;
+  font-size: $fs4;
+  justify-content: flex-start;
+  span{
+    font-family: auto;
+    margin-left: 5px;
+  }
+}
+.btn3{
+  display: inline-flex;
+  font-size: $fs8;
+  color: $color;
+  margin-top: 3%;
+  margin-bottom: 1px;
+  border-bottom: 1px solid $color;
+}
+h5{
+  font-size: $fs8;
+  color: $color;
+  margin-bottom: 1.5%;
+}
+h5{
+  a{
+    @include anim;
+    font-size: $fs5;
+    font-weight: 600;
+    color: $color2;
+    margin-bottom: 1.5%;
+  }
+}
+h4{
+  font-size: $fs3;
+  color: $white;
+  text-align: center;
+  margin: 3% 0;
+  text-align: left;
+  @media screen and (max-width: 1500px){
+    font-size: $fs4;
+  }
+}
+
+// grap
+.cls{
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  background: $white;
+}
+.grap{
+  position: relative;
+  margin-bottom: 3%;
+  overflow: hidden;
+  >a{
+    @media screen and (max-width: 1500px){
+      width: 130%;
+      margin-left: -15%;
+    }
+    @media screen and(max-width: 1150px){
+      width: 150%;
+      margin-left: -25%;
+    }
+    @media screen and(max-width: 850px){
+      width: 200%;
+      margin-left: -50%;
+    }
+    @media screen and(max-width: 650px){
+      width: 260%;
+      margin-left: -80%;
+    }
+    @media screen and(max-width: 550px){
+      width: 300%;
+      margin-left: -100%;
+    }
+    @media screen and(max-width: 450px){
+      width: 340%;
+      margin-left: -120%;
+    }
+  }
+  
+  .pic_txt{
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translate(-50%);
+    .inner_pt{
+      width: calc(50% - 46px);
+      background: $white;
+      padding: 4%;
+      @media screen and(max-width: 850px){
+        width: calc(100% - 10px);;
+      }
+      @media screen and(max-width: 550px){
+        padding: 7%;
+      }
+      h4{
+        font-size: $fs3;
+        color: $color;
+        margin-top: 0;
+        @media screen and(max-width: 1500px){
+          font-size: 30px;
+        }
+        @media screen and(max-width: 1150px){
+          font-size: $fs4;
+        }
+        @media screen and(max-width: 450px){
+          font-size: 21px;
+        }
+      }
+      p{
+        font-size: $fs8;
+        line-height: 1.3rem;
+        margin: 2% 0;
+      }
+      .btn{
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.cls2{
+    content: '';
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+@mixin pub_tit{
+  width: $width;
+  margin-bottom: 2%;
+  overflow: hidden;
+  position: relative;
+  h5{
+    background: $color6;
+    padding: 1rem 0;
+    margin: 0 auto;
+    color: $color;
+    font-size: $fs4;
+    &:before{
+      @extend .cls2;
+      left: 0;
+      background: $color;
+    }
+    &:after{
+      @extend .cls2;
+      right: 0;
+      background: $color6;
+    }
+    span{
+      margin-left: 20px;
+    }
+  }
+}
+
+@mixin pro_txt{
+  .pro_txt{
+    @include anim;
+    background: $color;
+    padding: 14px;
+    color: $white;
+    text-align: center;
+    p{
+      font-weight: 200;
+      font-size: $fs8;
+      margin-bottom: 6px;
+    }
+    span{
+      font-weight: 600;
+      font-size: $fs7;
+    }
+  }
+}
